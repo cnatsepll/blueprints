@@ -1,0 +1,215 @@
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+h2{
+  font-size: 1.3em;
+}
+
+.full-width{
+  width: 100%;
+}
+.half-width{
+  width: 50%;
+}
+.fifth-width{
+  width: 20%;
+}
+
+.full-height{
+  height: 100%;
+}
+.half-height{
+  height: 50%;
+}
+.fifth-height{
+  height: 20%;
+}
+
+.flexColumn{
+  display: flex;
+  flex-direction: row;
+}
+
+textarea {	
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;	
+  width: 100%;
+  height: 100%;
+  }
+
+
+
+#pageGrid{
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto, minmax(250px, 1fr));
+  
+  /* grid-template-rows: repeat(auto, 1fr); */
+  grid-gap: .5em;
+
+}
+
+.formSelection {
+  margin-bottom: 1em;
+}
+
+.module{
+  background: #d0ffc5;
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start; */
+  padding: 10px;
+  border: 3px solid black;
+}
+
+
+#formSelector {
+  grid-column: 1;
+}
+
+#formTitle{
+  grid-column: 2/12;
+}
+#purpose{
+  height: 30%;
+}
+
+#importantInfo{
+  grid-column: 1/12;
+}
+#instructionsGrid{
+  grid-template-columns: auto 1fr 1fr;
+}
+
+#options{
+  grid-column: 1/12;
+}
+
+#usageAndPricing{
+  grid-column: 1/12;
+}
+
+
+  .myForm {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    grid-auto-flow: row dense;
+    grid-gap: .8em;
+    background: rgb(213, 214, 255);
+    padding: 1.2em;
+  }
+  .myForm > label  {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .myForm > input,
+  .myForm > button {
+    grid-column: 2;
+    grid-row: auto;
+    padding: 1em;
+    border: none;
+  }
+  .myForm textarea {
+   min-height: calc(100% - 2em);
+   width: 100%;
+   border: none;
+  }
+  #comment-box {
+   grid-column: 3;
+   grid-row: span 3;
+  }
+  .myForm > button {
+   grid-column: 2 / 4; 
+  }
+
+
+  .myForm2 {
+    display: grid;
+    grid-template-areas: 
+      "customer taxi"
+      "customer extras"
+      "pickup dropoff"
+      "instructions instructions"
+      "submit submit";
+  	grid-template-columns: auto auto;  
+  	grid-template-rows: auto auto auto auto;
+    grid-gap: .8em .5em;
+    background: rgb(213, 214, 255);
+    padding: 1.2em;
+  }
+  .myForm2 textarea {
+    height: calc(100% - 1.5em);
+    }
+  .myForm2 button {
+    background: gray;
+    color: white;
+    padding: 1em;
+    }
+  .myForm2 input:not([type=radio]):not([type=checkbox]), 
+  .myForm2 textarea, 
+  .myForm2 select {
+   	width: 100%;
+    border: 0;
+    padding: 1em;
+    margin: .5em 0;
+  }
+  .myForm2 label {
+   display: block; 
+  }
+  fieldset {
+    border: 0;
+  }
+  #customer {
+    grid-area: customer;
+  }
+  #taxi {
+    grid-area: taxi;
+  }
+  #extras {
+    grid-area: extras;
+  }
+  #pickup {
+    grid-area: pickup;
+  }
+  #dropoff {
+    grid-area: dropoff;
+  }
+  #instructions {
+    grid-area: instructions;
+  }
+  #submit {
+    grid-area: submit;
+  }

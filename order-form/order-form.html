@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+  <title>Oder Form</title>
+</head>
+
+<body id="pageGrid">
+
+  <section id="formSelector" class="module">
+    <h2>
+      Select Form
+    </h2>
+    <label for="Model">
+      <input type="radio" id="Model" name="formSelection" class="formSelection" value="Model" />
+      Model
+    </label>
+    <br />
+    <label for="Append">
+      <input type="radio" id="Append" name="formSelection" class="formSelection" value="Append" />
+      Append
+    </label>
+    <br />
+    <label for="Prospect">
+      <input type="radio" id="Prospect" name="formSelection" class="formSelection" value="Prospect" />
+      Prospect
+    </label>
+  </section>
+
+  <section id="formTitle" class="module">
+    <h2>
+      Report Title
+    </h2>
+    <div class="full-width full-height">
+      <div>
+        Purpose:
+      </div>
+      <div id="purpose" class="">
+        <textarea name="" id=""></textarea>
+      </div>
+      <div>
+        Notes:
+      </div>
+      <div>
+        <textarea name="" id=""></textarea>
+      </div>
+    </div>
+  </section>
+
+  <section id="importantInfo" class="module">
+    <h2>Instructions</h2>
+    <form class="myForm">
+        <label for="customer_name">Using </label>
+        <input type="text" name="customer_name" id="customer_name" required>
+        <label for="email_address">With </label>
+        <input type="email" name="email_address" id="email_address">
+        <label for="phone">Find </label>
+        <input type="tel" name="phone" id="phone">
+        <div id="comment-box">
+          <label for="comments">Specific Breakout</label>
+          <textarea name="comments" id="comments" maxlength="500"></textarea>
+        </div>
+        <button>Save</button>
+      </form>
+  </section>
+
+  <section id="options" class="module">
+    <div class="">
+      <h2>Options</h2>
+    </div>
+    <form class="myForm2">
+        <fieldset id="customer">
+          <label for="customer_name">Name </label>
+          <input type="text" name="customer_name" id="customer_name" required>
+      
+          <label for="phone_number">Phone </label>
+          <input type="tel" name="phone_number" id="phone_number">
+      
+          <label for="email_address">Email </label>
+          <input type="email" name="email_address" id="email_address">
+        </fieldset>
+        <fieldset id="taxi">
+          <legend>Which taxi do you require?</legend>
+          <label> <input type="radio" name="taxi" id="taxi_car" required value="car"> Car </label>
+          <label> <input type="radio" name="taxi" id="taxi_van" required value="van"> Van </label>
+          <label> <input type="radio" name="taxi" id="taxi_tuk" required value="tuktuk"> Tuk Tuk </label>
+        </fieldset>
+      
+        <fieldset id="extras">
+          <legend>Extras</legend>
+          <label> <input type="checkbox" name="extras" id="extras_baby" value="baby"> Baby Seat </label>
+          <label> <input type="checkbox" name="extras" id="extras_wheel" value="wheelchair"> Wheelchair Access </label>
+          <label> <input type="checkbox" name="extras" id="extras_tip" value="tip"> Stock Tip </label>
+        </fieldset>
+        
+        <fieldset id="pickup">
+          <label for="pickup_time">Pickup Date/Time</label>
+          <input type="datetime-local" name="pickup_time" id="pickup_time" required>
+      
+          <label for="pickup_place">Pickup Place</label>
+          <select name="pickup_place" id="pickup_place">
+            <option value="" selected="selected">Select One</option>
+            <option value="office" >Taxi Office</option>
+            <option value="town_hall" >Town Hall</option>
+            <option value="telepathy" >We'll Guess!</option>
+          </select>
+        </fieldset>
+      
+        <fieldset id="dropoff">
+        <label for="dropoff_place">Dropoff Place</label>
+          <input type="text" name="dropoff_place" id="dropoff_place" required list="destinations">
+      
+          <datalist id="destinations">
+            <option value="Airport">
+            <option value="Beach">
+            <option value="Fred Flinstone's House">
+          </datalist>
+        </fieldset>
+        
+        <fieldset id="instructions">
+          <label for="comments">Special Instructions</label>
+          <textarea name="comments" id="comments" maxlength="500"></textarea>
+        </fieldset>
+      
+        <button id="submit">Submit Booking</button>
+      
+      </form>
+  </section>
+
+
+
+  <section id="usageAndPricing" class="module">
+    <div class="">
+      <h2>Pricing and Usage</h2>
+    </div>
+    <div>
+      <textarea name="" id=""></textarea>
+    </div>
+  </section>
+
+</body>
+
+</html>
