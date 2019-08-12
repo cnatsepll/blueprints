@@ -1,1 +1,154 @@
-<h1> TEST </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+textarea {	
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;	
+  width: calc(100% - 1.5em);
+  height:  calc(100% - 1.5em);
+  }
+#page-grid{
+  display: grid;
+  grid-template-areas: 
+    "selector overview"
+    "taxonomy taxonomy"
+    "parameters parameters"
+    "inputs output"
+    "details details"
+    "pricing pricing";
+  grid-template-columns: auto auto;  
+  grid-template-rows: auto auto auto auto;
+  grid-gap: .8em .5em;
+  background: rgb(213, 214, 255);
+  padding: 1.2em;
+}
+.module{
+  background: #ffffff;
+  padding: 10px;
+  border: 3px solid black;
+}
+  #selector {
+    grid-area: selector;
+  }
+  #overview {
+    grid-area: overview;
+  }
+  #taxonomy {
+    grid-area: taxonomy;
+  }
+  #parameters {
+    grid-area: parameters;
+  }
+  #inputs {
+    grid-area: inputs;
+  }
+  #output {
+    grid-area: output;
+  }
+  #details {
+    grid-area: details;
+  }
+  #pricing {
+    grid-area: pricing;
+  }
+    </style>
+    <title>Order Form</title>
+</head>
+
+<body>
+
+    <h1>Order Form</h1>
+    <section id="page-grid">
+        <div id="selector" class="module">
+            <h2>selector</h2>
+            <br>
+            <div id="prospects">
+                prospects
+            </div>
+            <br>
+            <div id="model">
+                model
+            </div>
+            <br>
+            <div id="model-application">
+                model application
+            </div>
+        </div>
+        <div id="overview" class="module">
+            overview
+        </div>
+        <div id="taxonomy" class="module">
+            taxonomy
+        </div>
+        <div id="parameters" class="module">
+            parameters
+        </div>
+        <div id="inputs" class="module">
+            inputs
+        </div>
+        <div id="details" class="module">
+            details
+        </div>
+        <div id="output" class="module">
+            output
+        </div>
+        <div id="pricing" class="module">
+            pricing
+        </div>
+    </section>
+
+</body>
+
+<script >
+  // setting the selector options 
+// then breaking out functions by layout
+const prospectsButton = document.querySelector('#prospects');
+const modelButton = document.querySelector('#model');
+const modelApplicationButton = document.querySelector('#model-application');
+
+// set module consts
+const form = document.querySelector('#page-grid');
+const overview = document.querySelector('#overview');
+const taxonomy = document.querySelector('#taxonomy');
+const parameters = document.querySelector('#parameters');
+const inputs = document.querySelector('#inputs');
+const details = document.querySelector('#details');
+const output = document.querySelector('#output');
+const pricing = document.querySelector('#pricing');
+
+
+// Selector Button Event Listeners
+prospectsButton.addEventListener('click', prospectsLayout);
+modelButton.addEventListener('click', modelLayout);
+modelApplicationButton.addEventListener('click', modelApplicationLayout);
+
+
+
+
+
+// Selected Layout Changeover Functions
+function prospectsLayout(){
+    // time function load
+    //
+    // layout changes
+    form.style.gridTemplateAreas = ' "selector selector""taxonomy parameters""overview parameters""inputs output""details details""pricing pricing" ';
+    alert('prospectsLayout');
+}
+
+function modelLayout(){
+    form.style.gridTemplateAreas = ' "details details""pricing pricing""selector selector""taxonomy parameters""overview parameters""inputs output" ';
+    alert('modelLayout')
+}
+
+
+function modelApplicationLayout(){
+    form.style.gridTemplateAreas = ' "inputs output""selector selector""taxonomy parameters""overview parameters""details details""pricing pricing" ';
+    alert('modelApplicationLayout')
+}
+</script>
+</html>
