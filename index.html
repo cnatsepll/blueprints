@@ -105,8 +105,9 @@ textarea {
 </body>
 
 <script >
-  // setting the selector options 
+// setting the selector options 
 // then breaking out functions by layout
+const selector = document.querySelector('#selector');
 const prospectsButton = document.querySelector('#prospects');
 const modelButton = document.querySelector('#model');
 const modelApplicationButton = document.querySelector('#model-application');
@@ -123,6 +124,7 @@ const pricing = document.querySelector('#pricing');
 
 
 // Selector Button Event Listeners
+defaultLayout.addEventListener('click', defaultLayout);
 prospectsButton.addEventListener('click', prospectsLayout);
 modelButton.addEventListener('click', modelLayout);
 modelApplicationButton.addEventListener('click', modelApplicationLayout);
@@ -132,10 +134,14 @@ modelApplicationButton.addEventListener('click', modelApplicationLayout);
 
 
 // Selected Layout Changeover Functions
+
+function defaultLayout(){
+    form.style.gridTemplateAreas = ' "selector overview""taxonomy taxonomy""parameters parameters""inputs output""details details""pricing pricing" ';
+    alert('prospectsLayout');
+}
+
+
 function prospectsLayout(){
-    // time function load
-    //
-    // layout changes
     form.style.gridTemplateAreas = ' "selector selector""taxonomy parameters""overview parameters""inputs output""details details""pricing pricing" ';
     alert('prospectsLayout');
 }
