@@ -82,38 +82,47 @@ textarea {
   grid-template-columns: auto auto;  
   grid-template-rows: auto auto auto auto;
   grid-gap: .8em .5em;
-  background: rgb(213, 214, 255);
+  background: rgb(255, 253, 231);
   padding: 1.2em;
 }
 
 .module{
   background: #ffffff;
   padding: 10px;
-  border: 3px solid black;
+  border: 2px solid rgb(18, 19, 85);
+  border-radius: 5px;
 }
 
 
   #selector {
     grid-area: selector;
+    background: #ddffec;
   }
   #overview {
+    height: 10vh;
     grid-area: overview;
   }
   #taxonomy {
+    height: 10vh;
     grid-area: taxonomy;
   }
   #parameters {
+    height: 10vh;
     grid-area: parameters;
   }
   #inputs {
+    height: 10vh;
     grid-area: inputs;
   }
   #output {
+    height: 10vh;
     grid-area: output;
   }
   #details {
+    height: 10vh;
     grid-area: details;
   }
   #pricing {
+    height: 10vh;
     grid-area: pricing;
   }

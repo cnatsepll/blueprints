@@ -1,5 +1,7 @@
 // setting the selector options 
 // then breaking out functions by layout
+const reportName = document.querySelector('#reportName');
+const selector = document.querySelector('#defaultLayout');
 const prospectsButton = document.querySelector('#prospects');
 const modelButton = document.querySelector('#model');
 const modelApplicationButton = document.querySelector('#model-application');
@@ -16,6 +18,7 @@ const pricing = document.querySelector('#pricing');
 
 
 // Selector Button Event Listeners
+selector.addEventListener('click', defaultLayout);
 prospectsButton.addEventListener('click', prospectsLayout);
 modelButton.addEventListener('click', modelLayout);
 modelApplicationButton.addEventListener('click', modelApplicationLayout);
@@ -25,21 +28,25 @@ modelApplicationButton.addEventListener('click', modelApplicationLayout);
 
 
 // Selected Layout Changeover Functions
+
+function defaultLayout(){
+    form.style.gridTemplateAreas = ' "selector overview""taxonomy taxonomy""parameters parameters""inputs output""details details""pricing pricing" ';
+    reportName.innerHTML = "";
+}
+
+
 function prospectsLayout(){
-    // time function load
-    //
-    // layout changes
     form.style.gridTemplateAreas = ' "selector selector""taxonomy parameters""overview parameters""inputs output""details details""pricing pricing" ';
-    alert('prospectsLayout');
+    reportName.innerHTML = "prospectsLayout";
 }
 
 function modelLayout(){
     form.style.gridTemplateAreas = ' "details details""pricing pricing""selector selector""taxonomy parameters""overview parameters""inputs output" ';
-    alert('modelLayout')
+    reportName.innerHTML = "modelLayout";
 }
 
 
 function modelApplicationLayout(){
     form.style.gridTemplateAreas = ' "inputs output""selector selector""taxonomy parameters""overview parameters""details details""pricing pricing" ';
-    alert('modelApplicationLayout')
+    reportName.innerHTML = "modelApplicationLayout";
 }
