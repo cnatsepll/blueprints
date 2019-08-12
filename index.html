@@ -124,7 +124,7 @@ const pricing = document.querySelector('#pricing');
 
 
 // Selector Button Event Listeners
-defaultLayout.addEventListener('click', defaultLayout);
+selector.addEventListener('click', defaultLayout);
 prospectsButton.addEventListener('click', prospectsLayout);
 modelButton.addEventListener('click', modelLayout);
 modelApplicationButton.addEventListener('click', modelApplicationLayout);
@@ -137,7 +137,7 @@ modelApplicationButton.addEventListener('click', modelApplicationLayout);
 
 function defaultLayout(){
     form.style.gridTemplateAreas = ' "selector overview""taxonomy taxonomy""parameters parameters""inputs output""details details""pricing pricing" ';
-    alert('prospectsLayout');
+    alert('defaultLayout');
 }
 
 
