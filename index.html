@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+h2{
+  font-size: 1.3em;
+}
+
+.full-width{
+  width: 100%;
+}
+.half-width{
+  width: 50%;
+}
+.fifth-width{
+  width: 20%;
+}
+
+.full-height{
+  height: 100%;
+}
+.half-height{
+  height: 50%;
+}
+.fifth-height{
+  height: 20%;
+}
+
+.flexColumn{
+  display: flex;
+  flex-direction: row;
+}
+
+textarea {	
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;	
+  width: calc(100% - 1.5em);
+  height:  calc(100% - 1.5em);
+  }
+
+
+
+#page-grid{
+  display: grid;
+  grid-template-areas: 
+    "selector overview"
+    "taxonomy taxonomy"
+    "parameters parameters"
+    "inputs output"
+    "details details"
+    "pricing pricing";
+  grid-template-columns: auto auto;  
+  grid-template-rows: auto auto auto auto;
+  grid-gap: .8em .5em;
+  background: rgb(255, 253, 231);
+  padding: 1.2em;
+}
+
+.module{
+  background: #ffffff;
+  padding: 10px;
+  border: 2px solid rgb(18, 19, 85);
+  border-radius: 5px;
+}
+
+
+  #selector {
+    grid-area: selector;
+    background: #ddffec;
+  }
+  #overview {
+    height: 10vh;
+    grid-area: overview;
+  }
+  #taxonomy {
+    height: 10vh;
+    grid-area: taxonomy;
+  }
+  #parameters {
+    height: 10vh;
+    grid-area: parameters;
+  }
+  #inputs {
+    height: 10vh;
+    grid-area: inputs;
+  }
+  #output {
+    height: 10vh;
+    grid-area: output;
+  }
+  #details {
+    height: 10vh;
+    grid-area: details;
+  }
+  #pricing {
+    height: 10vh;
+    grid-area: pricing;
+  }
+    </style>
+    <title>Order Form</title>
+</head>
+
+<body>
+    <section>
+        <span>
+            <h1 id="title">Order Form</h1>
+            <div id="reportName" ></div>
+        </span>
+    </section>
+    <section id="page-grid">
+        <div id="selector" class="module">
+            <h2 id="defaultLayout">selector</h2>
+            <br>
+            <div id="prospects">
+                prospects
+            </div>
+            <br>
+            <div id="model">
+                model
+            </div>
+            <br>
+            <div id="model-application">
+                model application
+            </div>
+        </div>
+        <div id="overview" class="module">
+            overview
+        </div>
+        <div id="taxonomy" class="module">
+            taxonomy
+        </div>
+        <div id="parameters" class="module">
+            parameters
+        </div>
+        <div id="inputs" class="module">
+            inputs
+        </div>
+        <div id="details" class="module">
+            details
+        </div>
+        <div id="output" class="module">
+            output
+        </div>
+        <div id="pricing" class="module">
+            pricing
+        </div>
+    </section>
+
+</body>
+
+<script>
+    // setting the selector options 
+// then breaking out functions by layout
+const reportName = document.querySelector('#reportName');
+const selector = document.querySelector('#defaultLayout');
+const prospectsButton = document.querySelector('#prospects');
+const modelButton = document.querySelector('#model');
+const modelApplicationButton = document.querySelector('#model-application');
+
+// set module consts
+const form = document.querySelector('#page-grid');
+const overview = document.querySelector('#overview');
+const taxonomy = document.querySelector('#taxonomy');
+const parameters = document.querySelector('#parameters');
+const inputs = document.querySelector('#inputs');
+const details = document.querySelector('#details');
+const output = document.querySelector('#output');
+const pricing = document.querySelector('#pricing');
+
+
+// Selector Button Event Listeners
+selector.addEventListener('click', defaultLayout);
+prospectsButton.addEventListener('click', prospectsLayout);
+modelButton.addEventListener('click', modelLayout);
+modelApplicationButton.addEventListener('click', modelApplicationLayout);
+
+
+
+
+
+// Selected Layout Changeover Functions
+
+function defaultLayout(){
+    form.style.gridTemplateAreas = ' "selector overview""taxonomy taxonomy""parameters parameters""inputs output""details details""pricing pricing" ';
+    reportName.innerHTML = "";
+}
+
+
+function prospectsLayout(){
+    form.style.gridTemplateAreas = ' "selector selector""taxonomy parameters""overview parameters""inputs output""details details""pricing pricing" ';
+    reportName.innerHTML = "prospectsLayout";
+}
+
+function modelLayout(){
+    form.style.gridTemplateAreas = ' "details details""pricing pricing""selector selector""taxonomy parameters""overview parameters""inputs output" ';
+    reportName.innerHTML = "modelLayout";
+}
+
+
+function modelApplicationLayout(){
+    form.style.gridTemplateAreas = ' "inputs output""selector selector""taxonomy parameters""overview parameters""details details""pricing pricing" ';
+    reportName.innerHTML = "modelApplicationLayout";
+}
+
+</script>
+</html>
